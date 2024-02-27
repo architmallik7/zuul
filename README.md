@@ -2,7 +2,7 @@
 
 # Zuul
 
-<img src="https://i.imgur.com/mRSosEp.png" width=500/>
+<img src="https://i.imgur.com/mRSosEp.png" width=500/> 
 
 
 Zuul is an L7 application gateway that provides capabilities for dynamic routing, monitoring, resiliency, security, and more.
