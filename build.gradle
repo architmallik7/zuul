@@ -104,6 +104,22 @@ subprojects {
     }
 }
 
+tasks.withType(Test) {
+  if(System.getProperty("HARNESS_JAVA_AGENT")) {
+    jvmArgs += [System.getProperty("HARNESS_JAVA_AGENT")]
+  }
+}
+
+// This makes sure that any test tasks for subprojects don't
+// fail in case the test filter does not match.
+gradle.projectsEvaluated {
+        tasks.withType(Test) {
+            filter {
+                setFailOnNoMatchingTests(false)
+            }
+        }
+}
+
 dependencies {
     rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.6.3"))
     rewrite("org.openrewrite.recipe:rewrite-logging-frameworks")
