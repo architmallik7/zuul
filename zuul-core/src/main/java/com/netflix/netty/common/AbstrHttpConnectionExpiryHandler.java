@@ -14,7 +14,7 @@
  *      limitations under the License.
  */
 
-package com.netflix.netty.common;
+package com.netflix.netty.common; 
 
 import com.netflix.config.CachedDynamicLongProperty;
 import com.netflix.zuul.netty.ChannelUtils;
