@@ -5,7 +5,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'io.harness:gradle-cache:0.0.2'
+        classpath 'io.harness:gradle-cache:0.0.4'
     }
 }
 
@@ -26,9 +26,6 @@ buildCache {
         enabled = false
     }
     remote(io.harness.Cache) {
-        accountId = System.getenv('HARNESS_ACCOUNT_ID')
-        token = System.getenv('HARNESS_PAT')
         push = System.getenv('CI') == "true"
-        endpoint = System.getenv('HARNESS_CACHE_SERVICE_ENDPOINT')
     }
 }
