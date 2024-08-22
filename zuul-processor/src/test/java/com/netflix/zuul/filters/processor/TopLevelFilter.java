@@ -45,5 +45,15 @@ final class TopLevelFilter extends TestFilter {
     }
 }
 
+@Test
+void testFailedCondition() {
+    // Deliberately causing the test to fail
+    int expectedOrder = 25; // Incorrect expected order value
+    int actualOrder = TopLevelFilter.class.getAnnotation(Filter.class).order();
+    
+    // This assertion will fail because expectedOrder (25) is not equal to actualOrder
+    assertEquals(expectedOrder, actualOrder, "The filter order should match the expected value.");
+}
+
 @Filter(order = 24, type = FilterType.INBOUND)
 final class OuterClassFilter extends TestFilter {}
