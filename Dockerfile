@@ -14,7 +14,7 @@ RUN apt-get update \
     && apt-get install -y zlib1g-dev \
     && apt-get clean
 
-RUN echo "Sleeping for 4.5 minutes..." && sleep 270
+# RUN echo "Sleeping for 4.5 minutes..." && sleep 270
 FROM base-builder as base-builder-extended
 RUN curl -sL https://deb.nodesource.com/setup_14.x
 FROM base-builder as golang
