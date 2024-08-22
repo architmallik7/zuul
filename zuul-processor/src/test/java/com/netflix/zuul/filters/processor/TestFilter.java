@@ -40,6 +40,11 @@ public abstract class TestFilter implements ZuulFilter<ZuulMessage, ZuulMessage>
     }
 
     @Override
+    public String filterName2() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public int filterOrder() {
         throw new UnsupportedOperationException();
     }
